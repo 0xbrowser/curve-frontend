@@ -15,6 +15,7 @@ import { Duration } from '@ui-kit/themes/design/0_primitives'
 import { ChainList } from './ChainList'
 import { ChainSettings } from './ChainSettings'
 import { ChainSwitcherIcon } from './ChainSwitcherIcon'
+import { breakpoints } from '@ui/utils'
 
 export type ChainOption<TChainId> = {
   chainId: TChainId
@@ -76,13 +77,19 @@ export const ChainSwitcher = <TChainId extends number>({
           title={isSettingsOpen ? t`Select Network Settings` : t`Select Network`}
           titleAction={
             isSettingsOpen && (
-              <IconButton onClick={closeSettings}>
+              <IconButton onClick={closeSettings} style={{ height: '16px', width: '16px', minWidth: '16px', marginLeft: '2px' }}>
                 <ArrowBackIcon />
               </IconButton>
             )
           }
           footer={!isSettingsOpen && <ModalSettingsButton onClick={openSettings} />}
-          sx={{ '& .MuiPaper-root': { borderRadius: '16px' } }}
+          sx={{
+            '& .MuiPaper-root': {
+              '@media (min-width: ${breakpoints.lg}rem)': {
+                borderRadius: '16px',
+              },
+            },
+          }}
         >
           {isSettingsOpen ? (
             <ChainSettings showTestnets={showTestnets} setShowTestnets={setShowTestnets} />

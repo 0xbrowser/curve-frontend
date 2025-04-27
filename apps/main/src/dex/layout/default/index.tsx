@@ -64,25 +64,42 @@ const BaseLayout = ({ children }: { children: ReactNode }) => {
 
 const getSections = (network: string): NavigationSection[] => [
   {
-    title: t`Documentation`,
+    title: t`Community`,
     links: [
-      { href: 'https://news.curve.fi/', label: t`News` },
-      { href: 'https://resources.curve.fi/lending/understanding-lending/', label: t`User Resources` },
-      { href: 'https://docs.curve.fi', label: t`Developer Resources` },
-      { href: getPath({ network }, ROUTE.PAGE_DISCLAIMER), label: t`Risk Disclaimers` },
-      { href: getPath({ network }, ROUTE.PAGE_INTEGRATIONS), label: t`Integrations` },
-      { href: 'https://resources.curve.fi/glossary-branding/branding/', label: t`Branding` },
-      ...(isChinese() ? [{ href: 'https://www.curve.wiki/', label: t`Wiki` }] : []),
+      {
+        label: t`Twitter`,
+        href: 'https://twitter.com/curvefinance',
+      },
+      {
+        label: t`Discord`,
+        href: 'https://discord.gg/rgrfS7W',
+      },
     ],
   },
   {
-    title: t`Security`, // audits, bug bounty, dune analytics, curve monitor & crvhub
+    title: t`Documentation`,
     links: [
-      { href: 'https://docs.curve.fi/references/audits/', label: t`Audits` },
-      { href: 'https://docs.curve.fi/security/security/', label: t`Bug Bounty` },
-      { href: 'https://dune.com/mrblock_buidl/Curve.fi', label: t`Dune Analytics` },
-      { href: 'https://curvemonitor.com', label: t`Curve Monitor` },
-      { href: 'https://crvhub.com/', label: t`Crvhub` },
+      {
+        label: t`Technical Docs`,
+        href: 'https://docs.curve.fi/',
+      },
+      {
+        label: t`Github`,
+        href: 'https://github.com/curvefi',
+      },
+    ],
+  },
+  {
+    title: t`Security`,
+    links: [
+      {
+        label: t`Audits`,
+        href: 'https://docs.curve.fi/security/security/#security-audits',
+      },
+      {
+        label: t`Dune Analytics`,
+        href: 'https://dune.com/mrblock_buidl/Curve.fi',
+      },
     ],
   },
 ]

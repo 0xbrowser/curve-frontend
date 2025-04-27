@@ -31,6 +31,7 @@ export const ConnectWalletPrompt = ({
     sx={{
       // note: not using mui colors as the color needs to match the background image and we don't have one for chad
       backgroundColor: 'var(--table--background-color)',
+      borderRadius: '8px',
     }}
   >
     <Stack
@@ -46,11 +47,12 @@ export const ConnectWalletPrompt = ({
       }}
     >
       <CurveLogo src={LogoImg} alt="Curve Logo" />
-      <Typography variant="headingXxl">{t`Enter Curve`}</Typography>
+      <Typography variant="headingXxl">{t`Enter Array`}</Typography>
     </Stack>
     <Stack spacing={3} alignItems="center">
       <Typography variant="bodyMRegular">{description}</Typography>
       <Button
+        style={{ borderRadius: '8px' }}
         size="large"
         color="primary"
         onClick={connectWallet}

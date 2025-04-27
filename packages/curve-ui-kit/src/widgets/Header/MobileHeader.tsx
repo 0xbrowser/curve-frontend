@@ -73,12 +73,16 @@ export const MobileHeader = <TChainId extends number>({
       <AppBar
         color="transparent"
         ref={mainNavRef}
-        sx={{ boxShadow: 'none' }}
-        // sx={{ backgroundColor: (t) => t.design.Layer[1].Fill }}
+        sx={(theme) => ({
+          boxShadow: 'none',
+          zIndex: theme.zIndex.drawer + 1,
+        })}
       >
         <GlobalBanner {...BannerProps} />
-        <Toolbar sx={(t) => ({ paddingY: 4, paddingX: 6, zIndex: t.zIndex.drawer + 1 })}>
-          <Container sx={{ backgroundColor: (t) => t.design.Layer[1].Fill, padding: 3, borderRadius: '32px', opacity: 0.9 }}>
+        <Toolbar sx={(t) => ({ paddingY: 4, paddingX: 6 })}>
+          <Container
+            sx={{ backgroundColor: (t) => t.design.Layer[1].Fill, padding: 3, borderRadius: '32px', opacity: 0.9 }}
+          >
             <MobileTopBar
               isLite={isLite}
               ChainProps={{ ...ChainProps, headerHeight: height }}
@@ -86,48 +90,46 @@ export const MobileHeader = <TChainId extends number>({
               isSidebarOpen={isSidebarOpen}
               toggleSidebar={toggleSidebar}
             />
-
-            <Drawer
-              anchor="left"
-              onClose={closeSidebar}
-              open={isSidebarOpen}
-              slotProps={{
-                paper: {
-                  sx: {
-                    top: height,
-                    ...MOBILE_SIDEBAR_WIDTH,
-                    ...HIDE_SCROLLBAR,
-                  },
-                },
-              }}
-              sx={{ top: height }}
-              variant="temporary"
-              hideBackdrop
-              data-testid="mobile-drawer"
-            >
-              {/* <Box>
-              <Stack padding={4}>
-                <HeaderStats appStats={appStats} />
-              </Stack>
-
-              <SidebarSection title={APP_LINK[currentMenu].label} pages={pages} />
-
-              {otherAppSections.map(({ appName, ...props }) => (
-                <SidebarSection key={appName} {...props} />
-              ))}
-
-              {sections.map(({ title, links }) => (
-                <SidebarSection key={title} title={title} pages={links} />
-              ))}
-
-              <SocialSidebarSection title={t`Community`} />
-            </Box> */}
-
-              <SideBarFooter WalletProps={{ ...WalletProps, onConnectWallet: onConnect }} />
-            </Drawer>
           </Container>
         </Toolbar>
       </AppBar>
+
+      <Drawer
+        anchor="left"
+        onClose={closeSidebar}
+        open={isSidebarOpen}
+        slotProps={{
+          paper: {
+            sx: {
+              ...MOBILE_SIDEBAR_WIDTH,
+              ...HIDE_SCROLLBAR,
+            },
+          },
+        }}
+        variant="temporary"
+        hideBackdrop
+        data-testid="mobile-drawer"
+      >
+        <Box sx={{ mt: height }}>
+          {/* <Stack padding={4}>
+            <HeaderStats appStats={appStats} />
+          </Stack>
+
+          <SidebarSection title={APP_LINK[currentMenu].label} pages={pages} />
+
+          {otherAppSections.map(({ appName, ...props }) => (
+            <SidebarSection key={appName} {...props} />
+          ))} */}
+
+          {sections.map(({ title, links }) => (
+            <SidebarSection key={title} title={title} pages={links} />
+          ))}
+
+          {/* <SocialSidebarSection title={t`Community`} /> */}
+        </Box>
+
+        <SideBarFooter WalletProps={{ ...WalletProps, onConnectWallet: onConnect }} />
+      </Drawer>
 
       {/* create an empty box to take the place behind the header */}
       <Box height={height} />

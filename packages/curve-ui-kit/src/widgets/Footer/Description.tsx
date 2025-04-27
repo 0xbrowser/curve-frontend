@@ -54,6 +54,7 @@ export const Description = () => (
       color="textSecondary"
       sx={{
         textWrap: 'balance',
+        mt: 5,
       }}
     >
       {t`Array is building the software that powers the future world economy: decentralised, trustless, inclusive and autonomous.`}

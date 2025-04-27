@@ -17,7 +17,7 @@ const FormConnectWallet = ({ loading, children }: { loading: boolean; children: 
           {t`Connect Wallet`}
         </Button>
       ) : isLoading(connectState) || loading ? (
-        <Button fillWidth size="large" disabled variant="icon-filled">
+        <Button fillWidth size="large" disabled variant="icon-filled" style={{borderRadius: '8px'}}>
           {t`Loading`} <Spinner isDisabled size={15} />
         </Button>
       ) : (

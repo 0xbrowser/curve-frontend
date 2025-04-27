@@ -34,7 +34,7 @@ export const SideBarFooter = ({ WalletProps }: SideBarFooterProps) => {
           backgroundColor,
         })}
       >
-        <Box display="flex" paddingX={4} marginTop={4}>
+        <Box display="flex" padding={4} marginTop={4}>
           <ConnectWalletIndicator {...WalletProps} sx={{ flexGrow: 1 }} />
         </Box>
 
