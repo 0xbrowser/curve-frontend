@@ -58,6 +58,7 @@ const Number = styled(Box)<{ status: StepStatus }>`
   width: 24px;
   height: 24px;
   margin-right: 20px;
+  border-radius: 4px;
 
   font-family: var(--button--font);
   font-weight: var(--button--font-weight);

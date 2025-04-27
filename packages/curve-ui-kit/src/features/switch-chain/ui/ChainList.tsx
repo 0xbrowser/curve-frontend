@@ -36,6 +36,7 @@ function ChainListItem<TChainId extends number>({
         data-testid={`menu-item-chain-${chain.chainId}`}
         selected={isSelected}
         tabIndex={0}
+        sx={{ borderRadius: '8px' }}
       >
         <ChainSwitcherIcon chain={chain} size={36} />
         <Typography sx={{ flexGrow: 1 }} variant="headingXsBold">

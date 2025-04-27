@@ -43,14 +43,20 @@ export const DesktopHeader = <TChainId extends number>({
 
   return (
     <>
-      <AppBar color="transparent" ref={mainNavRef}>
+      <AppBar color="transparent" ref={mainNavRef} sx={{ boxShadow: 'none' }}>
         <GlobalBanner {...BannerProps} />
 
         <Toolbar
-          sx={{ backgroundColor: (t) => t.design.Layer[1].Fill, justifyContent: 'space-around', paddingY: 3 }}
+          sx={{
+            justifyContent: 'space-around',
+            paddingY: 4,
+            paddingX: 6,
+          }}
           data-testid="main-nav"
         >
-          <Container>
+          <Container
+            sx={{ backgroundColor: (t) => t.design.Layer[1].Fill, paddingX: 6, paddingY: 3, borderRadius: '32px', opacity: 0.9 }}
+          >
             <HeaderLogo isLite={isLite} currentMenu={currentMenu} />
             {/* <AppButtonLinks currentMenu={menu} onChange={setMenu} networkName={networkName} /> */}
 

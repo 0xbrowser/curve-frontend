@@ -26,6 +26,7 @@ const TextSkeleton = styled.span<TextSkeletonProps>`
       return `
         height: ${skeleton[1]}px;
         width: ${skeleton[0]}px;
+        border-radius: 4px;
       `
     }
   }}

@@ -36,5 +36,5 @@ export const useHeaderHeight = (bannerHeight: number | undefined) => {
   const isDesktop = useMediaQuery(isDesktopQuery, { noSsr: true })
   const theme = useTheme()
   const headerHeight = isDesktop ? DESKTOP_HEADER_HEIGHT : calcMobileHeaderHeight(theme)
-  return `calc(${headerHeight} + ${bannerHeight ?? 0}px)`
+  return `calc(${headerHeight} + ${bannerHeight ?? 0}px + 16px)`
 }

@@ -72,7 +72,7 @@ export const Footer = ({ appName, networkName, headerHeight }: FooterProps) => {
           </Grid>
         ))}
 
-        <Llama
+        {/* <Llama
           src={LlamaImageSrc}
           sx={{
             height: SizesAndSpaces.IconSize.xxl,
@@ -89,7 +89,7 @@ export const Footer = ({ appName, networkName, headerHeight }: FooterProps) => {
             setIsBeta={setIsBeta}
             openBetaSnackbar={openBetaSnackbar}
           />
-        )}
+        )} */}
 
         {isBetaSnackbarVisible != null && (
           <BetaSnackbar

@@ -1,18 +1,17 @@
 body.theme-dark {
-  /* ------ Colors  ------ */
-  --primary-100: hsla(230, 60%, 29%, 1);
-  --primary-200: hsla(228, 63%, 36%, 1);
-  --primary-300: hsla(226, 65%, 43%, 1);
-  --primary-400: hsla(225, 90%, 57%, 1);
+  /* ------ Colors  ------ */ /* Base reference color: #554fa5 */
+  --primary-200: hsla(243, 38%, 55%, 1);
+  --primary-300: hsla(243, 40%, 62%, 1);
+  --primary-400: hsla(243, 65%, 69%, 1);
   --primary-400a10: color-mix(in srgb, var(--primary-400) 10%, transparent);
   --primary-400a20: color-mix(in srgb, var(--primary-400) 20%, transparent);
   --primary-400a30: color-mix(in srgb, var(--primary-400) 30%, transparent);
   --primary-400a50: color-mix(in srgb, var(--primary-400) 50%, transparent);
-  --primary-400l59: hsl(220, 98%, 59%);
-  --primary-500: hsla(225, 81%, 73%, 1);
-  --primary-500l61: hsl(220, 99%, 61%);
-  --primary-600: hsla(224, 71%, 81%, 1);
-  --primary-700: hsla(227, 47%, 89%, 1);
+  --primary-400l59: hsl(243, 70%, 59%);
+  --primary-500: hsla(243, 75%, 78%, 1);
+  --primary-500l61: hsl(243, 75%, 61%);
+  --primary-600: hsla(243, 65%, 85%, 1);
+  --primary-700: hsla(243, 47%, 92%, 1);
 
   --black-100: hsla(45, 7%, 9%, 1);
   --black-200: hsla(45, 7%, 11%, 1);

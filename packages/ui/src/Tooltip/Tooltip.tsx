@@ -56,7 +56,7 @@ const StyledTooltip = styled.span<
 >`
   background: var(--tooltip--background-color);
   border: 1px solid gray;
-  border-radius: 2px;
+  border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0 0 0 / 0.1);
   color: var(--tooltip--color);
   font-size: var(--font-size-2);

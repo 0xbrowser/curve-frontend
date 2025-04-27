@@ -20,7 +20,7 @@ export type HeaderLogoProps = {
 }
 
 const APP_NAMES = {
-  dex: 'Curve',
+  dex: 'Array',
   lend: 'LLAMALEND',
   crvusd: 'crvUSD',
   dao: 'DAO',

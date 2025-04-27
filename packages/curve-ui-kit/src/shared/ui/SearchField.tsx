@@ -49,6 +49,10 @@ export const SearchField = ({
       variant="outlined"
       autoFocus
       {...props}
+      sx={{ 
+        '& .MuiOutlinedInput-root': { borderRadius: '8px' },
+        ...props.sx
+      }}
       value={search}
       name={name}
       placeholder={placeholder}

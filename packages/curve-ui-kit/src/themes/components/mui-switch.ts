@@ -14,9 +14,9 @@ export const defineMuiSwitch = ({
         },
       },
     },
-    switchBase: { borderRadius: 0, '&.Mui-checked+.MuiSwitch-track': { opacity: 1 } },
+    switchBase: { borderRadius: 8, '&.Mui-checked+.MuiSwitch-track': { opacity: 1 } },
     track: {
-      borderRadius: 0,
+      borderRadius: 8,
       backgroundColor: Default.Fill,
       border: `1px solid ${Default.Outline}`,
       '.Mui-checked &': {
@@ -25,7 +25,7 @@ export const defineMuiSwitch = ({
       },
     },
     thumb: {
-      borderRadius: 0,
+      borderRadius: 5,
       color: Default.Label,
       '.Mui-checked &': { color: Checked.Label },
     },

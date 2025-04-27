@@ -415,10 +415,10 @@ export const createDarkDesign = (Dark: typeof plain.Dark | typeof inverted.Dark)
       Feedback: Dark.Text.Feedback,
     },
     FontFamily: {
-      Heading: 'Mona Sans',
-      Body: 'Mona Sans',
-      Mono: 'Mona Sans',
-      Button: 'Mona Sans',
+      Heading: 'Rubik',
+      Body: 'Rubik',
+      Mono: 'Rubik',
+      Button: 'Rubik',
     },
   } as const
 

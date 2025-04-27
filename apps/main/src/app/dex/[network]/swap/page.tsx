@@ -4,7 +4,7 @@ import type { NetworkUrlParams } from '@/dex/types/main.types'
 
 type SwapPageProps = { params: Promise<NetworkUrlParams> }
 
-export const metadata: Metadata = { title: 'Swap - Curve' }
+export const metadata: Metadata = { title: 'Swap - Array' }
 
 const SwapPage = async ({ params }: SwapPageProps) => <Swap {...await params} />
 

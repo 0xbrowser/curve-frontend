@@ -1,6 +1,7 @@
 // LOGO
-export { default as LogoImg } from './curve-logo.png'
-export { ReactComponent as RCLogoSM } from './curve-logo-sm.svg'
+// export { default as LogoImg } from './curve-logo.png'
+export { default as LogoImg } from './array-logo.png'
+export { ReactComponent as RCLogoSM } from './array-logo-sm.svg'
 export { ReactComponent as RCLogoText } from './curve-logo-text.svg'
 export { ReactComponent as RCCrossCurve } from './logo/crosscurve.svg'
 export { default as RCScrvUSDLogoSM } from './scrvusd-logo/webp/scrvUSD-sm.webp'

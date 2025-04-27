@@ -58,6 +58,7 @@ export const InputWrapper = styled(Box)<InputWrapperProps>`
   color: var(--input--color);
   background-color: var(--input--background-color);
   border: 1px solid var(--input--border-color);
+  border-radius: 8px;
   box-shadow: inset 0.5px 0.5px 0 0.5px var(--input--border-color);
 
   /* || MODIFIERS */

@@ -124,7 +124,7 @@ const Page = (params: NetworkUrlParams) => {
   }
   return (
     <StyledQuickSwapWrapper variant="primary" shadowed>
-      <BoxHeader className="title-text">
+      <BoxHeader className="title-text" style={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px' }}>
         <IconButton testId="hidden" hidden />
         {t`Swap`}
         <SlippageSettings
@@ -163,6 +163,7 @@ const Page = (params: NetworkUrlParams) => {
 const StyledQuickSwapWrapper = styled(Box)`
   margin-top: 1rem;
   width: 100%;
+  border-radius: 16px;
 
   @media (min-width: ${breakpoints.sm}rem) {
     margin: 1.5rem auto;

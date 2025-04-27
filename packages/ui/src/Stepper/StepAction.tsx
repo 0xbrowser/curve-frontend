@@ -96,6 +96,7 @@ const StyledButton = styled(Button)`
   display: flex;
   justify-content: center;
   padding: var(--spacing-1);
+  border-radius: 8px;
 
   text-transform: var(--box_action--button--text-transform);
 `

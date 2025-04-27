@@ -42,6 +42,7 @@ const InputMaxBtn = ({
 const StyledButton = styled(Button)<ButtonProps>`
   padding: var(--spacing-1);
   font-size: var(--font-size-2);
+  border-radius: 4px;
 `
 
 InputMaxBtn.displayName = 'InputMaxBtn'

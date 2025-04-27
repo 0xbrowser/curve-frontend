@@ -67,6 +67,7 @@ export const TokenSelectButton = ({ token, disabled, onClick, sx }: Props) => (
       minWidth: MinWidth.select,
       backgroundColor: (t) => t.design.Layer[1].Fill,
       border: 'none',
+      borderRadius: '8px',
       borderBottom: (t) => `2px solid ${t.design.Layer[1].Outline}`,
       ...(!disabled && {
         '&:hover': {

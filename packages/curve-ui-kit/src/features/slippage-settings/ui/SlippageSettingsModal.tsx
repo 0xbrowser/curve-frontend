@@ -142,7 +142,7 @@ export const SlippageSettingsModal = ({ isOpen, maxSlippage, onSave, onClose }: 
   // Allow 'too-high' error as it's discouraged but sometimes necessary for low-liquidity pools
   const canSave = selected && (selected !== 'custom' || (customValue && (!error || error === 'too-high')))
   const footer = (
-    <Button fullWidth disabled={!canSave} onClick={() => onSave(selected === 'custom' ? customValue : selected)}>
+    <Button sx={{ borderRadius: '8px' }} fullWidth disabled={!canSave} onClick={() => onSave(selected === 'custom' ? customValue : selected)}>
       {t`Save`}
     </Button>
   )
@@ -197,7 +197,7 @@ export const SlippageSettingsModal = ({ isOpen, maxSlippage, onSave, onClose }: 
       title={t`Slippage Settings`}
       footer={footer}
       // Compact modal
-      sx={{ '& .MuiPaper-root': { height: 'auto', minHeight: 'auto' } }}
+      sx={{ '& .MuiPaper-root': { height: 'auto', minHeight: 'auto', borderRadius: '16px' } }}
     >
       <Stack gap={Spacing.md}>
         <FormControl fullWidth>

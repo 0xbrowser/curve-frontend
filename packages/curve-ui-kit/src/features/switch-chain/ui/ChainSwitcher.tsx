@@ -82,6 +82,7 @@ export const ChainSwitcher = <TChainId extends number>({
             )
           }
           footer={!isSettingsOpen && <ModalSettingsButton onClick={openSettings} />}
+          sx={{ '& .MuiPaper-root': { borderRadius: '16px' } }}
         >
           {isSettingsOpen ? (
             <ChainSettings showTestnets={showTestnets} setShowTestnets={setShowTestnets} />

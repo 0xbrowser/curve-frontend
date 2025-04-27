@@ -17,6 +17,7 @@ import { SideBarFooter } from './SideBarFooter'
 import { SidebarSection } from './SidebarSection'
 import { SocialSidebarSection } from './SocialSidebarSection'
 import { HeaderImplementationProps } from './types'
+import { Container } from '@mui/material'
 
 const HIDE_SCROLLBAR = {
   // hide the scrollbar, on mobile it's not needed, and it messes up with the SideBarFooter
@@ -69,36 +70,42 @@ export const MobileHeader = <TChainId extends number>({
   )
   return (
     <>
-      <AppBar color="transparent" ref={mainNavRef} sx={{ backgroundColor: (t) => t.design.Layer[1].Fill }}>
+      <AppBar
+        color="transparent"
+        ref={mainNavRef}
+        sx={{ boxShadow: 'none' }}
+        // sx={{ backgroundColor: (t) => t.design.Layer[1].Fill }}
+      >
         <GlobalBanner {...BannerProps} />
-        <Toolbar sx={(t) => ({ paddingBlock, zIndex: t.zIndex.drawer + 1 })}>
-          <MobileTopBar
-            isLite={isLite}
-            ChainProps={{ ...ChainProps, headerHeight: height }}
-            currentMenu={currentMenu}
-            isSidebarOpen={isSidebarOpen}
-            toggleSidebar={toggleSidebar}
-          />
+        <Toolbar sx={(t) => ({ paddingY: 4, paddingX: 6, zIndex: t.zIndex.drawer + 1 })}>
+          <Container sx={{ backgroundColor: (t) => t.design.Layer[1].Fill, padding: 3, borderRadius: '32px', opacity: 0.9 }}>
+            <MobileTopBar
+              isLite={isLite}
+              ChainProps={{ ...ChainProps, headerHeight: height }}
+              currentMenu={currentMenu}
+              isSidebarOpen={isSidebarOpen}
+              toggleSidebar={toggleSidebar}
+            />
 
-          <Drawer
-            anchor="left"
-            onClose={closeSidebar}
-            open={isSidebarOpen}
-            slotProps={{
-              paper: {
-                sx: {
-                  top: height,
-                  ...MOBILE_SIDEBAR_WIDTH,
-                  ...HIDE_SCROLLBAR,
+            <Drawer
+              anchor="left"
+              onClose={closeSidebar}
+              open={isSidebarOpen}
+              slotProps={{
+                paper: {
+                  sx: {
+                    top: height,
+                    ...MOBILE_SIDEBAR_WIDTH,
+                    ...HIDE_SCROLLBAR,
+                  },
                 },
-              },
-            }}
-            sx={{ top: height }}
-            variant="temporary"
-            hideBackdrop
-            data-testid="mobile-drawer"
-          >
-            {/* <Box>
+              }}
+              sx={{ top: height }}
+              variant="temporary"
+              hideBackdrop
+              data-testid="mobile-drawer"
+            >
+              {/* <Box>
               <Stack padding={4}>
                 <HeaderStats appStats={appStats} />
               </Stack>
@@ -116,8 +123,9 @@ export const MobileHeader = <TChainId extends number>({
               <SocialSidebarSection title={t`Community`} />
             </Box> */}
 
-            <SideBarFooter WalletProps={{ ...WalletProps, onConnectWallet: onConnect }} />
-          </Drawer>
+              <SideBarFooter WalletProps={{ ...WalletProps, onConnectWallet: onConnect }} />
+            </Drawer>
+          </Container>
         </Toolbar>
       </AppBar>
 

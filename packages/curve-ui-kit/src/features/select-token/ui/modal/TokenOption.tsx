@@ -40,6 +40,7 @@ export const TokenOption = ({ chain, symbol, label, address, balance, tokenPrice
         tabIndex={0}
         sx={{
           minHeight: IconSize.xxl,
+          borderRadius: '8px',
           '&': { transition: `background-color ${TransitionFunction}` },
           ...(disabled && {
             cursor: 'not-allowed',

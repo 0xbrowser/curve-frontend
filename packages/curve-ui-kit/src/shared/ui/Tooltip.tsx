@@ -19,7 +19,12 @@ export const TooltipContent = ({ title, children }: { title: ReactNode; children
   // cancel any theme inversion as it's often applied on hover
   <InvertTheme inverted={false}>
     <Box
-      sx={{ padding: Spacing.md, backgroundColor: (t) => t.design.Layer[3].Fill, width: '100%' }}
+      sx={{
+        padding: Spacing.md,
+        backgroundColor: (t) => t.design.Layer[3].Fill,
+        width: '100%',
+        borderRadius: '16px',
+      }}
       onClick={(e) => e.stopPropagation()} // prevent changing pages when clicking on the tooltip
     >
       <Typography variant="bodyMBold" color="textPrimary">
@@ -39,7 +44,7 @@ export const Tooltip = ({ title, body, clickable, children, slotProps, ...props 
     title={title && <TooltipContent title={title}>{body}</TooltipContent>}
     slotProps={{
       ...(!clickable && { popper: { sx: { userSelect: 'none', pointerEvents: 'none' } } }), // prevent text selection and pointer events
-      tooltip: { sx: { '&': { padding: 0 } } }, // remove padding with inverted color
+      tooltip: { sx: { '&': { padding: 0, borderRadius: '16px' } } }, // remove padding with inverted color
     }}
     {...props}
   >

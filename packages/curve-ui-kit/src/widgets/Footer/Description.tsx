@@ -45,7 +45,7 @@ export const Description = () => (
           fontWeight: FontWeight.Bold,
         }}
       >
-        Curve
+        Array
       </Typography>
     </Link>
 
@@ -56,7 +56,7 @@ export const Description = () => (
         textWrap: 'balance',
       }}
     >
-      {t`Curve DAO is building the software that powers the future world economy: decentralised, trustless, inclusive and autonomous.`}
+      {t`Array is building the software that powers the future world economy: decentralised, trustless, inclusive and autonomous.`}
     </Typography>
   </Box>
 )

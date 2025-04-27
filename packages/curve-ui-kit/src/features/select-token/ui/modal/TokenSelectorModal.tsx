@@ -53,6 +53,7 @@ export const TokenSelectorModal = ({ isOpen, showManageList, compact, onClose, .
           maxHeight: MaxHeight.tokenSelector,
           height: 'auto',
           minHeight: compact ? 'auto' : MaxHeight.tokenSelector,
+          borderRadius: '16px',
         },
       }}
     >
