@@ -98,7 +98,7 @@ export const MobileHeader = <TChainId extends number>({
             hideBackdrop
             data-testid="mobile-drawer"
           >
-            <Box>
+            {/* <Box>
               <Stack padding={4}>
                 <HeaderStats appStats={appStats} />
               </Stack>
@@ -114,7 +114,7 @@ export const MobileHeader = <TChainId extends number>({
               ))}
 
               <SocialSidebarSection title={t`Community`} />
-            </Box>
+            </Box> */}
 
             <SideBarFooter WalletProps={{ ...WalletProps, onConnectWallet: onConnect }} />
           </Drawer>

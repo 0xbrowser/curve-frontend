@@ -38,7 +38,7 @@ export const SideBarFooter = ({ WalletProps }: SideBarFooterProps) => {
           <ConnectWalletIndicator {...WalletProps} sx={{ flexGrow: 1 }} />
         </Box>
 
-        <Accordion sx={{ backgroundColor }} disableGutters>
+        {/* <Accordion sx={{ backgroundColor }} disableGutters>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ backgroundColor, paddingInline: 4 }}>
             <GearIcon sx={{ fontSize: 22, fill: 'transparent', stroke: 'currentColor' }} />
             <Typography
@@ -61,7 +61,7 @@ export const SideBarFooter = ({ WalletProps }: SideBarFooterProps) => {
               <AdvancedModeSwitcher advancedMode={[isAdvancedMode, setAdvancedMode]} />
             </SettingsOption>
           </AccordionDetails>
-        </Accordion>
+        </Accordion> */}
       </Box>
       <Box minHeight={150} /> {/* To avoid the last item to be hidden by the connect indicator */}
     </>

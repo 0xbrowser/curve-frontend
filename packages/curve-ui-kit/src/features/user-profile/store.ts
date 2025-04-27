@@ -44,8 +44,8 @@ const INITIAL_THEME =
   typeof window !== 'undefined'
     ? window.matchMedia('(prefers-color-scheme: dark)').matches
       ? 'dark'
-      : 'light'
-    : 'light'
+      : 'dark'
+    : 'dark'
 
 const INITIAL_STATE: State = {
   theme: INITIAL_THEME,

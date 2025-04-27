@@ -52,7 +52,7 @@ export const DesktopHeader = <TChainId extends number>({
         >
           <Container>
             <HeaderLogo isLite={isLite} currentMenu={currentMenu} />
-            <AppButtonLinks currentMenu={menu} onChange={setMenu} networkName={networkName} />
+            {/* <AppButtonLinks currentMenu={menu} onChange={setMenu} networkName={networkName} /> */}
 
             <Box sx={{ flexGrow: 1 }} />
 
@@ -61,8 +61,8 @@ export const DesktopHeader = <TChainId extends number>({
                 <UserProfileButton />
               ) : (
                 <>
-                  <AdvancedModeSwitcher advancedMode={[isAdvancedMode, setAdvancedMode]} label={t`Advanced`} />
-                  <ThemeSwitcherButton theme={theme} onChange={setTheme} label={t`Mode`} />
+                  {/* <AdvancedModeSwitcher advancedMode={[isAdvancedMode, setAdvancedMode]} label={t`Advanced`} /> */}
+                  {/* <ThemeSwitcherButton theme={theme} onChange={setTheme} label={t`Mode`} /> */}
                 </>
               )}
 
@@ -71,7 +71,7 @@ export const DesktopHeader = <TChainId extends number>({
             </Box>
           </Container>
         </Toolbar>
-        <Toolbar
+        {/* <Toolbar
           sx={{
             backgroundColor: (t) => t.design.Layer[2].Fill,
             justifyContent: 'space-around',
@@ -90,7 +90,7 @@ export const DesktopHeader = <TChainId extends number>({
               <HeaderStats appStats={appStats} />
             </Box>
           </Container>
-        </Toolbar>
+        </Toolbar> */}
       </AppBar>
       {/* create an empty box to take the place behind the header */}
       <Box height={height} />
