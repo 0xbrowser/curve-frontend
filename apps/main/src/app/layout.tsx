@@ -3,6 +3,7 @@ import { StyledComponentsRegistry } from '@/app/StyledComponentsRegistry'
 import baseCss from '@ui/styles/base.css'
 import { CURVE_LOGO_URL } from '@ui/utils/utilsConstants'
 import { RootCssProperties } from '@ui-kit/themes/fonts'
+import { Analytics } from '@vercel/analytics/react'
 
 const injectIpfsPrefix = `
 (function () {
@@ -65,6 +66,7 @@ const Layout = ({ children }: { children: ReactNode }) => (
     </head>
     <body>
       <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      <Analytics />
     </body>
   </html>
 )
