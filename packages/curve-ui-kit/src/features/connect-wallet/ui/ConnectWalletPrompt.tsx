@@ -31,7 +31,7 @@ export const ConnectWalletPrompt = ({
     sx={{
       // note: not using mui colors as the color needs to match the background image and we don't have one for chad
       backgroundColor: 'var(--table--background-color)',
-      borderRadius: '8px',
+      borderRadius: '32px',
     }}
   >
     <Stack

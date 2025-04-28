@@ -109,17 +109,21 @@ const Page = (params: NetworkUrlParams) => {
 
   if (!provider) {
     return (
-      <Box display="flex" fillWidth flexJustifyContent="center">
-        <ConnectWalletWrapper>
-          <ConnectWalletPrompt
-            description="Connect wallet to swap"
-            connectText="Connect Wallet"
-            loadingText="Connecting"
-            connectWallet={() => connectWallet()}
-            isLoading={isLoading(connectState)}
-          />
-        </ConnectWalletWrapper>
-      </Box>
+      <div style={{ position: 'relative', width: '100%', marginTop: '24px' }}>
+        <Box display="flex" fillWidth flexJustifyContent="center">
+          <ConnectWalletWrapper>
+            <ConnectWalletPrompt
+              description="Connect wallet to swap"
+              connectText="Connect Wallet"
+              loadingText="Connecting"
+              connectWallet={() => connectWallet()}
+              isLoading={isLoading(connectState)}
+            />
+          </ConnectWalletWrapper>
+        </Box>
+        <BackgroundLeft />
+        <BackgroundRight />
+      </div>
     )
   }
   return (
@@ -220,6 +224,7 @@ const BackgroundRight = styled.div`
 const ConnectWalletWrapper = styled.div`
   display: flex;
   margin: var(--spacing-3) auto;
+  opacity: 0.94;
 `
 
 export default Page
