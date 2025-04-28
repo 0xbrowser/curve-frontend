@@ -48,6 +48,7 @@ const StyledExternalLink = styled(ExternalLink)`
 const StyledInfoBar = styled(Box)`
   padding: var(--spacing-2);
   padding-right: 0;
+  border-radius: 8px;
 
   color: var(--white);
   background-color: var(--info-400);

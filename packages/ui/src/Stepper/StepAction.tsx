@@ -107,6 +107,7 @@ const ActionBox = styled(StepBox)`
   color: var(--box_action--button--loading--color);
   background-color: var(--box_action--button--loading--background-color);
   box-shadow: 3px 3px var(--box_action--button--loading--shadow-color);
+  border-radius: 8px;
 
   text-align: center;
 
@@ -119,6 +120,7 @@ const ActionBox = styled(StepBox)`
 
 const TaskStep = styled(StepBox)<{ status: StepStatus }>`
   ${stepStyle}
+  border-radius: 8px;
 
   ${(props) => taskStepStatusStyles(props.status)}
   transition: all 0.5s ease;

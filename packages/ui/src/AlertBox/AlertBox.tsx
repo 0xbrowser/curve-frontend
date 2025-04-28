@@ -102,6 +102,7 @@ const Wrapper = styled(Box)<Pick<AlertBoxProps, 'alertType'> & { enabledHeightTo
 
   color: var(--white);
   word-break: break-word;
+  border-radius: 8px;
 
   a:hover {
     color: inherit;

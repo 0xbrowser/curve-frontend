@@ -100,6 +100,7 @@ const AlertFormError = ({ errorKey, ...props }: Props) => {
 const StyledAlertBox = styled(AlertBox)`
   max-height: 300px;
   overflow-y: auto;
+  border-radius: 8px;
 
   [data-tag='content'] {
     align-items: flex-start;
