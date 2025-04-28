@@ -123,40 +123,44 @@ const Page = (params: NetworkUrlParams) => {
     )
   }
   return (
-    <StyledQuickSwapWrapper variant="primary" shadowed>
-      <BoxHeader className="title-text" style={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px' }}>
-        <IconButton testId="hidden" hidden />
-        {t`Swap`}
-        <SlippageSettings
-          maxSlippage={storeMaxSlippage}
-          onSave={(slippage) => setMaxSlippage(slippage, isStableswapRoute ? 'stable' : 'crypto')}
-          buttonIcon={
-            // This component is a MUI component on a non MUI page.
-            // That means the icon button color doesn't mesh well with the header box color in chad theme.
-            <InvertTheme inverted={theme === 'chad'}>
-              <TuneIcon color="action" />
-            </InvertTheme>
-          }
-        />
-      </BoxHeader>
-
-      <Box grid gridRowGap={3} padding>
-        {rChainId && (
-          <QuickSwap
-            pageLoaded={loaded}
-            params={params}
-            searchedParams={{
-              fromAddress: paramsFromAddress,
-              toAddress: paramsToAddress,
-            }}
-            rChainId={rChainId}
-            tokensMapper={tokensMapper}
-            tokensMapperStr={tokensMapperStr}
-            redirect={redirect}
+    <div style={{ position: 'relative', width: '100%' }}>
+      <StyledQuickSwapWrapper variant="primary">
+        <BoxHeader className="title-text" style={{ borderTopLeftRadius: '16px', borderTopRightRadius: '16px' }}>
+          <IconButton testId="hidden" hidden />
+          {t`Swap`}
+          <SlippageSettings
+            maxSlippage={storeMaxSlippage}
+            onSave={(slippage) => setMaxSlippage(slippage, isStableswapRoute ? 'stable' : 'crypto')}
+            buttonIcon={
+              // This component is a MUI component on a non MUI page.
+              // That means the icon button color doesn't mesh well with the header box color in chad theme.
+              <InvertTheme inverted={theme === 'chad'}>
+                <TuneIcon color="action" />
+              </InvertTheme>
+            }
           />
-        )}
-      </Box>
-    </StyledQuickSwapWrapper>
+        </BoxHeader>
+
+        <Box grid gridRowGap={3} padding>
+          {rChainId && (
+            <QuickSwap
+              pageLoaded={loaded}
+              params={params}
+              searchedParams={{
+                fromAddress: paramsFromAddress,
+                toAddress: paramsToAddress,
+              }}
+              rChainId={rChainId}
+              tokensMapper={tokensMapper}
+              tokensMapperStr={tokensMapperStr}
+              redirect={redirect}
+            />
+          )}
+        </Box>
+      </StyledQuickSwapWrapper>
+      <BackgroundLeft />
+      <BackgroundRight />
+    </div>
   )
 }
 
@@ -164,10 +168,52 @@ const StyledQuickSwapWrapper = styled(Box)`
   margin-top: 1rem;
   width: 100%;
   border-radius: 16px;
+  max-width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  opacity: 0.94;
 
   @media (min-width: ${breakpoints.sm}rem) {
     margin: 1.5rem auto;
     max-width: var(--transfer-min-width);
+  }
+`
+
+const BackgroundLeft = styled.div`
+  background-image: url('/array-bg-left.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  position: absolute;
+  left: 20px;
+  top: 140px;
+  width: 70%;
+  aspect-ratio: 1/1;
+  z-index: -1;
+  opacity: 0.8;
+
+  @media (min-width: ${breakpoints.md}rem) {
+    top: 50px;
+    width: 40%;
+  }
+`
+
+const BackgroundRight = styled.div`
+  background-image: url('/array-bg-right.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  position: absolute;
+  right: 20px;
+  top: 140px;
+  width: 70%;
+  aspect-ratio: 1/1;
+  z-index: -1;
+  opacity: 0.8;
+  @media (min-width: ${breakpoints.md}rem) {
+    top: 50px;
+    width: 40%;
   }
 `
 

@@ -15,7 +15,6 @@ import { Duration } from '@ui-kit/themes/design/0_primitives'
 import { ChainList } from './ChainList'
 import { ChainSettings } from './ChainSettings'
 import { ChainSwitcherIcon } from './ChainSwitcherIcon'
-import { breakpoints } from '@ui/utils'
 
 export type ChainOption<TChainId> = {
   chainId: TChainId
@@ -85,7 +84,7 @@ export const ChainSwitcher = <TChainId extends number>({
           footer={!isSettingsOpen && <ModalSettingsButton onClick={openSettings} />}
           sx={{
             '& .MuiPaper-root': {
-              '@media (min-width: ${breakpoints.lg}rem)': {
+              '@media (min-width: 80rem)': {
                 borderRadius: '16px',
               },
             },
